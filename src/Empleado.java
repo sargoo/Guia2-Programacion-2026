@@ -6,6 +6,7 @@ public abstract class   Empleado {
         this.nombre = nombre;
         this.salario = salario;
     }
+
     public String getNombre(){
         return this.nombre;
     }
