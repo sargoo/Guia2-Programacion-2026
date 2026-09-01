@@ -6,8 +6,18 @@ public class EmpleadoContratista extends EmpleadoPorHoras{
     }
 
     @Override
+    public String toString() {
+        return "EmpleadoContratista{" +
+                "tarifa=" + tarifa +
+                super.toString() +
+                '}';
+    }
+
+    @Override
     public double calcularPago() {
 
         return super.calcularPago() + this.tarifa;
+
+
     }
 }

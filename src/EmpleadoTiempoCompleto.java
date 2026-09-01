@@ -7,4 +7,6 @@ public class EmpleadoTiempoCompleto extends Empleado {
     public double calcularPago() {
         return this.getSalario();
     }
+
+
 }

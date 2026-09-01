@@ -10,6 +10,9 @@ public abstract class   Empleado {
     public String getNombre(){
         return this.nombre;
     }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public double getSalario(){
         return this.salario;
     }
@@ -18,4 +21,12 @@ public abstract class   Empleado {
     }
 
     public abstract double calcularPago();
+
+    @Override
+    public String toString() {
+        return "Empleado{" +
+                "nombre='" + this.nombre + '\'' +
+                ", salario=" + this.salario +
+                '}';
+    }
 }
