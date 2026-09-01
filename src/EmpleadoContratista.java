@@ -1,12 +1,13 @@
-public class EmpleadoContratista extends Empleado{
+public class EmpleadoContratista extends EmpleadoPorHoras{
     private double tarifa;
-    public EmpleadoContratista(double tarifa, String nombre, double salario){
-        super(nombre, salario);
-
+    public EmpleadoContratista(double tarifa,int horasTrabajadas,double valorHora, String nombre, double salario){
+        super(horasTrabajadas, valorHora, nombre, salario);
+        this.tarifa = tarifa;
     }
 
     @Override
     public double calcularPago() {
-        return 0;
+
+        return super.calcularPago() + this.tarifa;
     }
 }
