@@ -7,6 +7,7 @@ void main() {
     int contador = 0;
     System.out.println("Ingrese cantidad total de empleados");
     maxEmpleados = sc.nextInt();
+    sc.nextLine();
     Empleado[] empleados = new Empleado[maxEmpleados];
         do{
             System.out.println("\n--- MENÚ DE EMPLEADOS ---");
@@ -15,8 +16,8 @@ void main() {
             System.out.println("3. Mostrar todos los pagos");
             System.out.println("4. Salir");
             System.out.print("Elige una opción: ");
-            sc.nextLine();
             opcion = sc.nextInt();
+            sc.nextLine();
             switch (opcion) {
 
                 case 1 -> {
@@ -31,16 +32,16 @@ void main() {
                         System.out.println("2- Empleado por horas.");
                         System.out.println("3- Empleado contratista.");
                         System.out.println("4- Atras");
-                        sc.nextLine();
                         seleccion = sc.nextInt();
+                        sc.nextLine();
                         switch (seleccion) {
                             case 1 -> {
                                 EmpleadoTiempoCompleto e = new EmpleadoTiempoCompleto("", 0);
                                 System.out.println("Ingrese nombre del Empleado");
-                                sc.nextLine();
                                 e.setNombre(sc.nextLine());
                                 System.out.println("Ingrese salario del empleado");
                                 e.setSalario(sc.nextDouble());
+                                sc.nextLine();
                                 empleados[contador] = e;
                                 contador ++;
                             }
@@ -50,15 +51,35 @@ void main() {
                                 System.out.println("Ingrese nombre del empleado:");
                                 e.setNombre(sc.nextLine());
                                 System.out.println("Ingrese el valor de la hora:");
-                                sc.nextLine();
                                 e.setValorHora(sc.nextInt());
+                                sc.nextLine();
                                 System.out.println("Ingrese cantidad de horas");
                                 e.setHorasTrabajadas(sc.nextInt());
+                                sc.nextLine();
+                                e.calcularPago();
+                                empleados[contador] = e;
+                                contador ++;
 
                             }
+
+                            case 3 -> {
+                                EmpleadoContratista e = new EmpleadoContratista(0,"",0);
+                                System.out.println("Ingrese nombre del empleado");
+                                e.setNombre(sc.nextLine());
+                                System.out.println("Ingrese tarifa del empleado");
+                                e.setTarifa(sc.nextDouble());
+                                sc.nextLine();
+                                System.out.println("Ingrese el valor de la hora:");
+                                e.setValorHora(sc.nextInt());
+                                sc.nextLine();
+                                System.out.println("Ingrese cantidad de horas");
+                                e.setHorasTrabajadas(sc.nextInt());
+                                sc.nextLine();
+                                e.calcularPago();
+                                empleados[contador] = e;
+                                contador ++;
+                            }
                         }
-
-
                     }
                 }
                 case 2 -> {
@@ -66,16 +87,15 @@ void main() {
                     String busqueda;
                     System.out.println("1- buscar un empleado por nombre.");
                     System.out.println("2- ver todos los empleados");
-                    sc.nextLine();
                     seleccion = sc.nextInt();
+                    sc.nextLine();
                     switch (seleccion){
                         case 1 -> {
                             System.out.println("Ingrese nombre del empleado");
-                            sc.nextLine();
                             busqueda = sc.nextLine();
                             for(int i = 0; i < contador; i ++){
                                 if(busqueda.equals(empleados[i].getNombre())){
-                                    System.out.println(empleados[i].getNombre());
+                                    System.out.println(empleados[i].toString());
                                 }
                             }
                         }
