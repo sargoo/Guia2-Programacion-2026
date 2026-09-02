@@ -9,14 +9,20 @@ public class EmpleadoPorHoras extends Empleado {
 
     }
 
-    public int horasTrabajadas(){
+    public int getHorasTrabajadas(){
         return this.horasTrabajadas;
+    }
+    public void setHorasTrabajadas(int horasTrabajadas){
+        this.horasTrabajadas = horasTrabajadas;
     }
 
     public double getValorHora(){
         return this.valorHora;
     }
 
+    public void setValorHora(double valorHora){
+        this.valorHora = valorHora;
+    }
 
     @Override
     public double calcularPago() {

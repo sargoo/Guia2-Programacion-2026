@@ -35,7 +35,7 @@ void main() {
                         seleccion = sc.nextInt();
                         switch (seleccion) {
                             case 1 -> {
-                                Empleado e = new EmpleadoTiempoCompleto("", 0);
+                                EmpleadoTiempoCompleto e = new EmpleadoTiempoCompleto("", 0);
                                 System.out.println("Ingrese nombre del Empleado");
                                 sc.nextLine();
                                 e.setNombre(sc.nextLine());
@@ -43,6 +43,18 @@ void main() {
                                 e.setSalario(sc.nextDouble());
                                 empleados[contador] = e;
                                 contador ++;
+                            }
+
+                            case 2-> {
+                                EmpleadoPorHoras e = new EmpleadoPorHoras(0,0,"", 0);
+                                System.out.println("Ingrese nombre del empleado:");
+                                e.setNombre(sc.nextLine());
+                                System.out.println("Ingrese el valor de la hora:");
+                                sc.nextLine();
+                                e.setValorHora(sc.nextInt());
+                                System.out.println("Ingrese cantidad de horas");
+                                e.setHorasTrabajadas(sc.nextInt());
+
                             }
                         }
 
